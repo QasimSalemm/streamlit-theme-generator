@@ -152,7 +152,7 @@ if new_theme_clicked:
         "🌲 Choosing the perfect palette...",
         "☀️ Lighting up your theme..."
     ]
-    with st.spinner(random.choice(wait_texts), show_time=True):
+    with st.spinner(random.choice(wait_texts)):
         time.sleep(2)
         st.success("Done! Your shiny new theme is ready! Scroll down to enjoy")
     generate_new_theme()
