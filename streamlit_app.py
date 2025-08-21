@@ -43,19 +43,19 @@ header_text.write(
     """
 )
 
-"" 
+"---" 
 
 col1, col2 = st.columns([0.35, 0.65])
 with col1:
     new_theme_clicked = st.button("🔄 Generate new theme")
 with col2:
-    theme_type = st.radio("", ["Light theme", "Dark theme"])
+    theme_type = st.radio("theme type", ["Light theme", "Dark theme"])
 # Shortcut
 state = st.session_state
 
 spinner = st.empty()
 if not state.first_time:
-    ""
+    "---"
     "Done! Scroll down to see your new theme"
 
 dark_checked = st.checkbox("Use dark themes")  # "Black is beautiful" or "Make it dark"
@@ -83,7 +83,7 @@ for column, label in zip(columns, labels):
         f"<small>{label.rstrip('Color').replace('B', ' b').capitalize()}</small>",
         unsafe_allow_html=True,
     )
-    lock_value = column.radio("", ["Locked", "Unlocked"], index=1, key="lock-" + label)
+    lock_value = column.radio("lock value", ["Locked", "Unlocked"], index=1, key="lock-" + label)
     locked.append(lock_value == "Locked")
 
 def apply_theme_from_session_state():
@@ -207,7 +207,7 @@ if mode == "Cute 🐿️":
     block_methods = [st.error, st.warning, st.info, st.success]
     with quote:
         random.choice(block_methods)(random.choice(bob_quotes))
-        st.write("")
+        st.write("---")
 
 st.write("---")
 
@@ -265,7 +265,7 @@ def draw_all(key, plot=False):
     st.color_picker("Colors, colors, colors", key=key + "colorpicker")
     with st.expander("Expand me!"):
         st.write("Hey! Nothing much here, just a surprise 👀")
-    st.write("")
+    st.write("---")
     st.write("That's our colorful journey for today!")
     st.progress(0.99)
     if plot:
