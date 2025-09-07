@@ -9,11 +9,13 @@ import utils
 import plotly.figure_factory as ff
 
 st.set_page_config(
-    page_title="Streamlit Theme Generator",
+    page_title="Free Streamlit Theme Generator - Create Beautiful Custom Themes Instantly",
     page_icon="images/theme.png",   # relative path
     layout="wide"
 )
-
+st.title("Streamlit Theme Generator: Build Stunning App Themes in One Click")
+st.write("Design and preview custom Streamlit themes with ease. Use our free theme generator to create professional color palettes, apply light or dark modes, and download ready-to-use config.toml files for your apps. Perfect for developers, data scientists, and Streamlit enthusiasts.")
+st.divider()
 utils.local_css("local_styles.css")
 
 # Init state. This is only run whenever a new session starts (i.e. each time a new
@@ -31,19 +33,7 @@ header_img = st.empty()
 header_img.image(
     "images/woman-artist-light-skin-tone.png",  # relative path
     width=100,
-)
-
-header_text = st.empty()
-header_text.write(
-    """
-    # Streamlit Theme Generator
-
-    Create stunning color themes for Streamlit in a click! Powered by [colormind.io](http://colormind.io/bootstrap/).  
-    Scroll down and watch your app transform
-    """
-)
-
-"---" 
+) 
 
 col1, col2 = st.columns([0.35, 0.65])
 with col1:
